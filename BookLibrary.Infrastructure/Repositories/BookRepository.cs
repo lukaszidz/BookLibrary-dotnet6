@@ -1,8 +1,9 @@
 ﻿namespace BookLibrary.Infrastructure.Repositories;
+
+using BookLibrary.App.Models;
 using BookLibrary.Core.Books;
-using BookLibrary.Core.BuildingBlocks;
-using BookLibrary.Core.BuildingBlocks.Paging;
 using BookLibrary.Infrastructure.Configuration;
+using BookLibrary.Utils.Paging;
 
 using Microsoft.EntityFrameworkCore;
 
@@ -32,17 +33,17 @@ internal sealed class BookRepository : IBookRepository
     {
         if (!string.IsNullOrEmpty(filter.Title))
         {
-            query = query.Where(b => b.Title.IgnoreCaseEquals(filter.Title));
+            query = query.Where(b => b.Title.ToLower().Equals(filter.Title));
         }
 
         if (!string.IsNullOrEmpty(filter.Publisher))
         {
-            query = query.Where(b => b.Publisher.IgnoreCaseEquals(filter.Publisher));
+            query = query.Where(b => b.Publisher.ToLower().Equals(filter.Publisher));
         }
 
         if (!string.IsNullOrEmpty(filter.Isbn))
         {
-            query = query.Where(b => b.Isbn.IgnoreCaseEquals(filter.Isbn));
+            query = query.Where(b => b.Isbn.ToLower().Equals(filter.Isbn));
         }
 
         if (filter.AuthorId.HasValue)

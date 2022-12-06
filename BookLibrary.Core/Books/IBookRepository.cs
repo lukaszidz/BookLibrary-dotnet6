@@ -1,6 +1,7 @@
 ﻿namespace BookLibrary.Core.Books;
-using BookLibrary.Core.BuildingBlocks;
-using BookLibrary.Core.BuildingBlocks.Paging;
+
+using BookLibrary.App.Models;
+using BookLibrary.Utils.Paging;
 
 public interface IBookRepository
 {

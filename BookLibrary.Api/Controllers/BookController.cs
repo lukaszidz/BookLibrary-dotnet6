@@ -1,17 +1,25 @@
 ﻿namespace BookLibrary.Api.Controllers;
-using Microsoft.AspNetCore.Authorization;
+
+using BookLibrary.App.Queries.FilterBook;
+using MediatR;
+
 using Microsoft.AspNetCore.Mvc;
 
 /// <summary>
-/// Query Controller for Books
+///  Controller for Books
 /// </summary>
 [Route("api/[controller]")]
-[Authorize]
 [ApiController]
-internal sealed class BookController : ControllerBase
+public sealed class BookController : ControllerBase
 {
-    //[HttpGet]
-    //public IEnumerable<> Get()
-    //{
-    //}
+    private readonly IMediator _mediator;
+
+    public BookController(IMediator mediator)
+    {
+        _mediator = mediator;
+    }
+
+
+    [HttpPost("filter")]
+    public async Task<IActionResult> Filter(FilterBookQuery query) => Ok(await _mediator.Send(query));
 }

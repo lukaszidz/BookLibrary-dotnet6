@@ -1,4 +1,5 @@
 ﻿namespace BookLibrary.Infrastructure.Configuration;
+
 using BookLibrary.Core.Books;
 using BookLibrary.Infrastructure.Repositories;
 

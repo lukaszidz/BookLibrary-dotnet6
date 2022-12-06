@@ -1,4 +1,5 @@
 ﻿namespace BookLibrary.Infrastructure.Configuration;
+
 using BookLibrary.Core.Authors;
 using BookLibrary.Core.Books;
 using BookLibrary.Core.Categories;

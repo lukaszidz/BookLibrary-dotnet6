@@ -1,4 +1,5 @@
-﻿using BookLibrary.Infrastructure.Configuration;
+﻿using BookLibrary.App.Configuration;
+using BookLibrary.Infrastructure.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddInfrastructure(builder.Configuration.Get<InfrastructureSettings>());
+builder.Services.AddApplication();
 
 var app = builder.Build();
 
@@ -21,8 +23,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
-app.UseAuthorization();
 
 app.MapControllers();
 

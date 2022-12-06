@@ -1,3 +1,3 @@
-﻿namespace BookLibrary.Core.BuildingBlocks.Paging;
+﻿namespace BookLibrary.Utils.Paging;
 
 public record PagedParams(int PageSize, int PageIndex);
