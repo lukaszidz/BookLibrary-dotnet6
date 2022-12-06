@@ -3,6 +3,7 @@
 using BookLibrary.Core.Authors;
 using BookLibrary.Core.Books;
 using BookLibrary.Core.Categories;
+
 using Microsoft.EntityFrameworkCore;
 
 internal sealed class BookContext : DbContext
@@ -26,8 +27,8 @@ internal sealed class BookContext : DbContext
 
             entity.HasKey(e => e.Id);
 
-            entity.HasOne(e => e.Category).WithOne().HasForeignKey<Category>(e => e.Id);
-            entity.HasMany(e => e.Authors).WithOne().IsRequired();
+            entity.HasOne(e => e.Category).WithMany(e => e.Books);
+            entity.HasMany(e => e.Authors).WithMany(e => e.Books);
 
             entity.Property(e => e.Title).IsRequired();
             entity.Property(e => e.Type).IsRequired();

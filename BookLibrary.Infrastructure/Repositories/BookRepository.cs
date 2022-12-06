@@ -16,6 +16,14 @@ internal sealed class BookRepository : IBookRepository
         _context = context;
     }
 
+    public async Task<int> Create(Book book)
+    {
+        _context.Books.Add(book);
+        await _context.SaveChangesAsync();
+
+        return book.Id;
+    }
+
     public Task<PagedResult<Book>> Filter(BookFilter filter, PagedParams paging)
     {
         var query = _context.Books
@@ -33,17 +41,17 @@ internal sealed class BookRepository : IBookRepository
     {
         if (!string.IsNullOrEmpty(filter.Title))
         {
-            query = query.Where(b => b.Title.ToLower().Equals(filter.Title));
+            query = query.Where(b => b.Title.ToLower().Contains(filter.Title.ToLower()));
         }
 
         if (!string.IsNullOrEmpty(filter.Publisher))
         {
-            query = query.Where(b => b.Publisher.ToLower().Equals(filter.Publisher));
+            query = query.Where(b => b.Publisher.ToLower().Contains(filter.Publisher.ToLower()));
         }
 
         if (!string.IsNullOrEmpty(filter.Isbn))
         {
-            query = query.Where(b => b.Isbn.ToLower().Equals(filter.Isbn));
+            query = query.Where(b => b.Isbn.ToLower().Contains(filter.Isbn.ToLower()));
         }
 
         if (filter.AuthorId.HasValue)

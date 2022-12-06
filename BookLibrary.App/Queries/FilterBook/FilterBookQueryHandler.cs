@@ -11,7 +11,7 @@ using BookLibrary.Utils.Paging;
 
 using MediatR;
 
-internal sealed class FilterBookQueryHandler : IRequestHandler<FilterBookQuery, PagedResult<BookModel>>
+internal sealed class FilterBookQueryHandler : IRequestHandler<FilterBookQuery, PagedResult<BookResult>>
 {
     private readonly IMapper _mapper;
     private readonly IBookRepository _bookRepository;
@@ -22,9 +22,9 @@ internal sealed class FilterBookQueryHandler : IRequestHandler<FilterBookQuery, 
         _bookRepository = bookRepository;
     }
 
-    public async Task<PagedResult<BookModel>> Handle(FilterBookQuery request, CancellationToken cancellationToken)
+    public async Task<PagedResult<BookResult>> Handle(FilterBookQuery request, CancellationToken cancellationToken)
     {
         var pagedResult = await _bookRepository.Filter(request.Filter, request.Paging);
-        return _mapper.Map<PagedResult<BookModel>>(pagedResult);
+        return _mapper.Map<PagedResult<BookResult>>(pagedResult);
     }
 }

@@ -5,5 +5,5 @@
 
     using MediatR;
 
-    public sealed record FilterBookQuery(BookFilter Filter, PagedParams Paging) : IRequest<PagedResult<BookModel>>;
+    public sealed record FilterBookQuery(BookFilter Filter, PagedParams Paging) : IRequest<PagedResult<BookResult>>;
 }

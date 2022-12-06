@@ -1,5 +1,6 @@
 ﻿namespace BookLibrary.Api.Controllers;
 
+using BookLibrary.App.Commands;
 using BookLibrary.App.Queries.FilterBook;
 using MediatR;
 
@@ -18,6 +19,9 @@ public sealed class BookController : ControllerBase
     {
         _mediator = mediator;
     }
+
+    [HttpPost]
+    public async Task<IActionResult> Create(CreateBookCommand command) => Ok(await _mediator.Send(command));
 
 
     [HttpPost("filter")]

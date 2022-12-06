@@ -1,4 +1,6 @@
 ﻿namespace BookLibrary.Core.Categories;
+
+using BookLibrary.Core.Books;
 using BookLibrary.Core.BuildingBlocks;
 
 public sealed class Category : Entity
@@ -9,4 +11,5 @@ public sealed class Category : Entity
     }
 
     public string Name { get; init; }
+    public ICollection<Book> Books { get; init; }
 }

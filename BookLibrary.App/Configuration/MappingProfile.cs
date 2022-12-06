@@ -12,6 +12,6 @@ internal sealed class MappingProfile : Profile
     {
         CreateMap(typeof(PagedResult<>), typeof(PagedResult<>));
 
-        CreateMap<Book, BookModel>();
+        CreateMap<Book, BookResult>();
     }
 }
