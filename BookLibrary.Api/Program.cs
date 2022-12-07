@@ -3,14 +3,26 @@ using BookLibrary.Infrastructure.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+var appSettings = builder.Configuration.Get<AppSettings>();
+var infraSettings = builder.Configuration.Get<InfrastructureSettings>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddInfrastructure(builder.Configuration.Get<InfrastructureSettings>());
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(
+        policy =>
+        {
+            policy.WithOrigins(appSettings.Cors)
+                                .AllowAnyHeader()
+                                .AllowAnyMethod();
+        });
+});
+
+builder.Services.AddInfrastructure(infraSettings);
 builder.Services.AddApplication();
 
 var app = builder.Build();
@@ -23,6 +35,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors();
 
 app.MapControllers();
 
