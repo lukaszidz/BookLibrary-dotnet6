@@ -31,7 +31,7 @@ internal sealed class BookRepository : IBookRepository
             .Include(b => b.Authors)
             .AsNoTracking();
 
-        var filterQuery = ApplyFilters(_context.Books.AsQueryable(), filter);
+        var filterQuery = ApplyFilters(query, filter);
 
         return filterQuery
             .ApplyPaging(paging);
