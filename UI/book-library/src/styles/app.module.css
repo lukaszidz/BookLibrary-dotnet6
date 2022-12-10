@@ -9,6 +9,34 @@
   width: 80vw;
 }
 
+.row {
+  margin-top: 20px;
+}
+
+.header {
+  text-align: center;
+}
+
+.searchContainer {
+  margin-bottom: 20px;
+}
+
+.rowInput {
+  margin: 8px 0px;
+}
+
+.rowInput input {
+  min-height: 30px;
+}
+
+.searchFoot {
+  text-align: center;
+}
+
+.searchFoot input[type=submit] {
+  min-width: 150px;
+}
+
 .bookTable tr:nth-child(even) {
   background-color: #f2f2f2;
 }
@@ -16,4 +44,8 @@
 .bookHeader {
   background-color: #4CAF50;
   color: #fff;
+}
+
+.bookTableFoot .cell {
+  text-align: center;
 }

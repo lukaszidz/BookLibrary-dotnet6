@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { BOOK_PAGE_SIZE } from './constants'
+import { BOOK_PAGE_SIZE } from '../constants'
+import { handlerError } from './fetchHandler'
 
 const API_URL = 'https://localhost:7182/api';
 
@@ -22,7 +23,10 @@ export function useFilter() {
                 })
         }
     )
-    .then(async r => setResponse(await r.json()));
+    .then(async r => setResponse(await r.json()))
+    .catch(error => {
+        handlerError(error);
+    })
 
     return [response?.items, response?.totalCount, call];
  }   

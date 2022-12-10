@@ -3,7 +3,7 @@ import Select from 'react-select'
 import { BOOK_PAGE_SIZE } from "../constants";
 import styles from "../styles/app.module.css";
 import Paging from './Paging'
-import useFilter  from '../Api'
+import useFilter  from '../api/Api.js'
 
 let [searchKey, searchValue] = [];
 
@@ -25,32 +25,32 @@ const Books = () => {
     
     return (
     <>
-        <form onSubmit={handleSubmit}>
-            <table>
-                <tbody>
-                    <tr>
-                        <td>Search By:</td>
-                        <td><Select name='searchKey' options={[
-                            { value: 'title', label: 'Title '},
-                            { value: 'publisher', label: 'Publisher '},
-                            { value: 'author', label: 'Author' },
-                            { value: 'type', label: 'Type' },
-                            { value: 'isbn', label: 'ISBN' },
-                            { value: 'category', label: 'Category'}
-                        ]} /></td>
-                    </tr>
-                    <tr>
-                        <td>Search Value:</td>
-                        <td><input name='searchValue' /></td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td><input type="submit" value="Search"/></td>
-                    </tr>
-                </tfoot>
-            </table>
-        </form>
+        <div className={styles.header}>
+            <h1>Royal Library</h1>
+        </div>
+        <div className={styles.searchContainer}>
+            <form onSubmit={handleSubmit}>
+                <div className={styles.row}>
+                    <label htmlFor="searchKey">Search By:</label>
+                    <Select name='searchKey' className={styles.rowInput} options={[
+                                    { value: 'title', label: 'Title '},
+                                    { value: 'publisher', label: 'Publisher '},
+                                    { value: 'author', label: 'Author' },
+                                    { value: 'type', label: 'Type' },
+                                    { value: 'isbn', label: 'ISBN' },
+                                    { value: 'category', label: 'Category'}
+                                ]} />
+                </div>
+
+                <div className={styles.row}>
+                    <label htmlFor="searchValue">Search Value:</label>
+                    <input type="text" name="searchValue" className={styles.rowInput} />
+                    <div className={styles.searchFoot}>
+                        <input type="submit" value="Search"/>
+                    </div>
+                </div>                    
+            </form>
+        </div>
 
         <table className={styles.bookTable}>
             <thead className={styles.bookHeader}>
@@ -77,9 +77,9 @@ const Books = () => {
                     </tr>
                 ))}
             </tbody>
-            <tfoot>
+            <tfoot className={styles.bookTableFoot}>
                 <tr>
-                    <td><Paging totalCount={totalCount} pageSize={BOOK_PAGE_SIZE} onClick={(i) => onPageClick(i)} /></td>
+                    <td className={styles.cell} colSpan="100%"><Paging totalCount={totalCount} pageSize={BOOK_PAGE_SIZE} onClick={(i) => onPageClick(i)} /></td>
                 </tr>
             </tfoot>
       </table>
