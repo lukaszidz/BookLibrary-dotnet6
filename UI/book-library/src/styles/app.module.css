@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.wrapper {
+  width: 80vw;
+}
+
+.bookTable tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.bookHeader {
+  background-color: #4CAF50;
+  color: #fff;
+}

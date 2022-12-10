@@ -1,0 +1,28 @@
+body
+{
+  font-family: 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif',
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+input[type=submit], button {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+button {
+  margin-right: 5px;
+}

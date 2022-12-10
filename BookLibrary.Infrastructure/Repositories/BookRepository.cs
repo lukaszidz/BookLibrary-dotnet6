@@ -54,9 +54,9 @@ internal sealed class BookRepository : IBookRepository
             query = query.Where(b => b.Isbn.ToLower().Contains(filter.Isbn.ToLower()));
         }
 
-        if (filter.AuthorId.HasValue)
+        if (!string.IsNullOrEmpty(filter.Author))
         {
-            query = query.Where(b => b.Authors.Any(a => a.Id == filter.AuthorId));
+            query = query.Where(b => b.Authors.Any(a => a.Name.ToLower().Contains(filter.Author.ToLower())));
         }
 
         if (filter.Type.HasValue)
@@ -64,9 +64,9 @@ internal sealed class BookRepository : IBookRepository
             query = query.Where(b => b.Type.Equals(filter.Type));
         }
 
-        if (filter.CategoryId.HasValue)
+        if (!string.IsNullOrEmpty(filter.Category))
         {
-            query = query.Where(b => b.Category.Id == filter.CategoryId);
+            query = query.Where(b => b.Category.Name.ToLower().Contains(filter.Category.ToLower()));
         }
 
         return query;

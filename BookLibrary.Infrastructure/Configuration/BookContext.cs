@@ -16,6 +16,8 @@ internal sealed class BookContext : DbContext
     }
 
     public DbSet<Book> Books { get; init; }
+    public DbSet<Category> Categories { get; init; }
+    public DbSet<Author> Authors { get; init; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

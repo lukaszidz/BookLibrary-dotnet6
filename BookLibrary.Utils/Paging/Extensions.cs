@@ -8,12 +8,15 @@ public static class Extensions
     {
         if (paging.PageSize == 0)
         {
-            return new PagedResult<T>(await query.ToListAsync(), false);
+            var items = await query.ToListAsync();
+            return new PagedResult<T>(items, items.Count, false);
         }
 
-        query = query.Skip(paging.PageIndex * paging.PageSize).Take(paging.PageSize + 1);
+        var totalCount = await query.CountAsync();
+
+        query = query.Skip(paging.PageIndex * paging.PageSize).Take(paging.PageSize);
         var result = await query.ToListAsync();
 
-        return new PagedResult<T>(result, result.Count > paging.PageSize);
+        return new PagedResult<T>(result, totalCount, result.Count > paging.PageSize);
     }
 }

@@ -1,6 +1,8 @@
 ﻿namespace BookLibrary.Infrastructure.Configuration;
 
+using BookLibrary.Core.Authors;
 using BookLibrary.Core.Books;
+using BookLibrary.Core.Categories;
 using BookLibrary.Infrastructure.Repositories;
 
 using Microsoft.EntityFrameworkCore;
@@ -16,6 +18,8 @@ public static class Extensions
             options => options.UseSqlServer(settings.Database.ConnectionString));
 
         services.AddScoped<IBookRepository, BookRepository>();
+        services.AddScoped<ICategoryRepository, CategoryRepository>();
+        services.AddScoped<IAuthorRepository, AuthorRepository>();
 
         return services;
     }
