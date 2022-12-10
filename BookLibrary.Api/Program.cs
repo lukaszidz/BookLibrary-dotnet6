@@ -1,4 +1,5 @@
-﻿using BookLibrary.App.Configuration;
+﻿using BookLibrary.Api.Configuration;
+using BookLibrary.App.Configuration;
 using BookLibrary.Infrastructure.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -39,5 +40,7 @@ app.UseHttpsRedirection();
 app.UseCors();
 
 app.MapControllers();
+
+app.UseCustomExceptions();
 
 app.Run();
