@@ -1,0 +1,101 @@
+[
+    {
+        "title": "The Lord of the Rings",
+        "type": 0,
+        "isbn": "9782123446803",
+        "category": "Adventure",
+        "authors": ["J. R. R. Tolkien"],
+        "publisher": "Allen & Unwin",
+        "allCopies": 1000
+    },
+    {
+        "title": "Animals Make Us Human",
+        "type": 0,
+        "isbn": "9782423446810",
+        "category": "Animals",
+        "authors": ["Temple Grandin", "Catherine Johnson"],
+        "publisher": "Houghton Mifflin Harcourt",
+        "allCopies": 500
+    },
+    {
+        "title": "Vigilance",
+        "type": 0,
+        "isbn": "9782623446812",
+        "category": "Biography",
+        "authors": ["Andrew K. Diemer"],
+        "publisher": "Knopf Publishing Group",
+        "allCopies": 700
+    },
+    {
+        "title": "And Then There Were None",
+        "type": 1,
+        "isbn": "9782683446814",
+        "category": "Mystery",
+        "authors": ["Agatha Christie"],
+        "publisher": "St. Martin's Press",
+        "allCopies": 800
+    },
+    {
+        "title": "The Pragmatic Programmer",
+        "type": 1,
+        "isbn": "9582683446815",
+        "category": "Programming",
+        "authors": ["Andy Hunt"],
+        "publisher": "Addison-Wesley Professional",
+        "allCopies": 600
+    },
+    {
+        "title": "Design Patterns",
+        "type": 1,
+        "isbn": "9512683446816",
+        "category": "Programming",
+        "authors": ["Erich Gamma", "Ralph Johnson"],
+        "publisher": "Addison-Wesley Professional",
+        "allCopies": 500
+    },
+    {
+        "title": "Clean Code",
+        "type": 0,
+        "isbn": "9512643446817",
+        "category": "Programming",
+        "authors": ["Robert C. Martin"],
+        "publisher": "Pearson",
+        "allCopies": 700
+    },
+    {
+        "title": "Clean Architecture",
+        "type": 0,
+        "isbn": "9512643446818",
+        "category": "Programming",
+        "authors": ["Robert C. Martin"],
+        "publisher": "Prentice Hall",
+        "allCopies": 700
+    },
+    {
+        "title": "Next of Kin",
+        "type": 0,
+        "isbn": "9512643446820",
+        "category": "Programming",
+        "authors": ["Roger Fouts", "Stephen Tukel Mills"],
+        "publisher": "William Morrow Paperbacks",
+        "allCopies": 900
+    },
+    {
+        "title": "The Laws of Human Nature",
+        "type": 0,
+        "isbn": "9112643446824",
+        "category": "Biography",
+        "authors": ["Robert Greene"],
+        "publisher": "Viking",
+        "allCopies": 900
+    },
+    {
+        "title": "Rich Dad, Poor Dad",
+        "type": 0,
+        "isbn": "9412642146836",
+        "category": "Business",
+        "authors": ["Robert T. Kiyosaki"],
+        "publisher": "Time Warner Books",
+        "allCopies": 900
+    }
+]
