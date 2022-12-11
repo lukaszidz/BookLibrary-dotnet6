@@ -20,11 +20,11 @@ API:
 ## Architecture
 
 **Server:** The Clean Architecture. It consists of following projects:
-- BookLibrary.API – Runs the .NET Api and exposed all endpoints via controller.
-- BookLibrary.App – Application layer based on CQRS implementation by using MediatR library. 
-- BookLibrary.Core – Domain entities and adapters.
-- BookLibrary.Infrastructure – Contains mostly the specific database repository implementation.
-- BookLibrary.Utils – A Common project with custom components and extension reusable across above projects.
+- **BookLibrary.API** – Runs the .NET Api and exposed all endpoints via controller.
+- **BookLibrary.App** – Application layer based on CQRS implementation by using MediatR library. 
+- **BookLibrary.Core** – Domain entities and adapters.
+- **BookLibrary.Infrastructure** – Contains mostly the specific database repository implementation.
+- **BookLibrary.Utils** – A Common project with custom components and extension reusable across above projects.
 
 **Client:** React. It has been structurized as follows:
 
