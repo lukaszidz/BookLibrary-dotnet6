@@ -24,9 +24,9 @@ API:
 
 **Client:** React. It contains:
 
-- components – Custom, resuable and business specific components.
-- api - Functions required to handle API requests and errors
-- styles - CSS files.
+- **components** – Custom, resuable and business specific components.
+- **api** - Functionality required to handle API requests and errors
+- **styles** - CSS files.
 
 
 ## Run on Local
