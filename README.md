@@ -6,11 +6,7 @@ Simple book library project, using .NET 6, React and MS SQL Server database. The
 
 ## Screenshots
 
-Searching with no filters:
-
 ![image](https://user-images.githubusercontent.com/12186634/206858765-0f2ce44e-84f6-4e14-9722-c47135a1db2d.png)
-
-Searching with filter applied:
 
 ![image](https://user-images.githubusercontent.com/12186634/206859300-9eb7a2ea-ca8c-406a-b095-824c022a9f79.png)
 
@@ -26,7 +22,7 @@ API:
 - **BookLibrary.Infrastructure** – Contains mostly the specific database repository implementation.
 - **BookLibrary.Utils** – A Common project with custom components and extension reusable across above projects.
 
-**Client:** React. It has been structurized as follows:
+**Client:** React. It contains:
 
 - components – Custom, resuable and business specific components.
 - api - Functions required to handle API requests and errors
