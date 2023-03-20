@@ -1,7 +1,7 @@
 
 # Book Library
 
-Simple book library project, using .NET 6, React and MS SQL Server database. The primary functionality is a filtering books by set of attributes (title, publisher, author, etc.)
+Simple CRUD application, built using .NET 6, React and MS SQL Server database. The primary functionality is a filtering books by set of attributes (title, publisher, author, etc.)
 
 
 ## Screenshots
